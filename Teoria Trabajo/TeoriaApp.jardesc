@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="Teoria Trabajo/Ejecutable/Teoria.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/Teoria Trabajo/TeoriaApp.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" mainClassHandleIdentifier="=Teoria Trabajo/src&lt;teoInfo.view{Vista.java[Vista" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <javaElement handleIdentifier="=Teoria Trabajo/src"/>
+        <folder path="/Teoria Trabajo/Ejecutable"/>
+        <file path="/Teoria Trabajo/.classpath"/>
+        <file path="/Teoria Trabajo/.project"/>
+    </selectedElements>
+</jardesc>
