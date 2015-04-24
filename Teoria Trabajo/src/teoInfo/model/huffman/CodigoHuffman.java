@@ -6,8 +6,8 @@ import java.util.PriorityQueue;
 
 public class CodigoHuffman {
 	
-	HashMap<Simbolo, String> codigos;
-	ArbolHuffman arbol;
+	public HashMap<Simbolo, String> codigos;
+	public ArbolHuffman arbol;
 	
 	public ArbolHuffman getArbol() {
 		return arbol;

@@ -35,6 +35,6 @@ public class Simbolo implements Comparable<Simbolo> {
 			return 0;
 	}
 	public String toString(){
-		return "Simbolo: "+simb+" p("+prob+")";
+		return "p("+simb+")="+prob;
 	}
 }
