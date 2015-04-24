@@ -1,10 +1,10 @@
 package teoInfo.view;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
+
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
-import java.awt.LayoutManager;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -20,12 +20,11 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTree;
 import javax.swing.SpringLayout;
-import javax.swing.border.Border;
+
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.MutableTreeNode;
+
 
 import teoInfo.model.huffman.ArbolHuffman;
 import teoInfo.model.huffman.CodigoHuffman;
@@ -43,7 +42,7 @@ public class Vista {
 		JPanel botoneraPanel = new JPanel(new FlowLayout());
 		SpringLayout layoutLongMedia = new SpringLayout();
 		JPanel longMedia = new JPanel(layoutLongMedia);
-		JLabel lLonMedia = new JLabel("<L>: ");
+		final JLabel lLonMedia = new JLabel("<L>: ");
 		JPanel metricas = new JPanel(new FlowLayout());
 		 JPanel simbolo = new JPanel(new FlowLayout());
 		JButton limpiarFuente = new JButton( "Limpiar Fuente" );
@@ -83,6 +82,7 @@ public class Vista {
 			  		}
 			  		String l = Double.toString(Media.calcular(fs, codificacion));
 			  		lValLonMedia.setText(l);
+			  		
 			  	} else {
 			  		fuente = "Fuente Invalida";
 			  	}
