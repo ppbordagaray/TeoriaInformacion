@@ -37,7 +37,7 @@ public class Vista {
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Teoria de la Informacion");
 		JPanel trabajo = new JPanel(new GridLayout(1,2));
-		JPanel analisis = new JPanel(new BorderLayout());
+		final JPanel analisis = new JPanel(new BorderLayout());
 		JButton bAddSimbolo = new JButton( "Agregar Simbolo" );
 		JPanel botoneraPanel = new JPanel(new FlowLayout());
 		SpringLayout layoutLongMedia = new SpringLayout();
@@ -56,7 +56,7 @@ public class Vista {
 		JLabel lSimb = new JLabel("Simbolo: ");
         final JTextField tFSimb = new JTextField("x",1);
 		final JTextArea fuenteLog = new JTextArea("");
-		final JTextField lValLonMedia = new JTextField(" ",8);
+		final JTextField lValLonMedia = new JTextField(" ",15);
 		lValLonMedia.setEditable(false);
 		fuenteLog.setBorder(new TitledBorder(new EtchedBorder(), "Fuente"));
 		fuenteLog.setEditable(false);
@@ -64,19 +64,22 @@ public class Vista {
 		final DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode();
 		final JTree arbol = new JTree(rootNode);
 		arbol.setBorder(new TitledBorder(new EtchedBorder(), "Huffman"));
+			
 		
 		JButton botonPrueba = new JButton( "Generar codigos" );
 		botonPrueba.addActionListener( new ActionListener() {
 			public void actionPerformed( ActionEvent evt ) {
 				
-				//String data = new String("Codigo Huffman:\n");
-		  		String fuente = new String("Fuente:\n");
+		  		String fuente = new String("");
 		  		if (Util.fValida(fs)){
 			  		CodigoHuffman codHuf=new CodigoHuffman();
 			  		HashMap<Simbolo,String> codificacion=new HashMap(codHuf.generarCodigoHuffman(fs));
 			  		
-			  		rootNode.add(dibujarArbol(codHuf.getArbol(),""));
-			  		arbol.setShowsRootHandles(true);
+			  		
+			  		rootNode.removeAllChildren();
+			  		rootNode.add( dibujarArbol(codHuf.getArbol(),""));
+			  		arbol.updateUI();
+			  		analisis.repaint();
 			  		for(int i=0; i<fs.size(); i++){
 			  			fuente = fuente + fs.get(i).toString()+"\n";
 			  		}
@@ -160,7 +163,11 @@ public class Vista {
         limpiarFuente.addActionListener( new ActionListener() {
 			public void actionPerformed( ActionEvent evt ) {
 				fs.clear();
-				fuenteLog.setText("Se limpio la fuente");
+				fuenteLog.setText("Fuente vacia");
+				rootNode.removeAllChildren();
+		  		//rootNode.add( dibujarArbol(codHuf.getArbol(),""));
+		  		arbol.updateUI();
+		  		analisis.repaint();
 		  	}
 		} );
         //****Metricas************************
